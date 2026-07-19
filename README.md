@@ -1,21 +1,35 @@
-# Deep Learning Coursework — Implementations & Experiments
+# Deep Learning Research Internship — University of Koblenz (SS 2026)
 
-Notebooks from my Deep Learning research work at the Institute for 
-Computer Science, Universität Koblenz (graded 1.0). Built following 
-the "Dive into Deep Learning" curriculum, with my own implementations, 
-exercise solutions, and ablation experiments.
+Coursework and exercise solutions from a graded research internship 
+(Forschungspraktikum) at the Institute for Computer Science, 
+University of Koblenz, supervised by Jennifer Wendland and 
+Prof. Dr. Maik Kschischo. **Final grade: 1.0.**
 
-## What's here
-Each notebook works through an architecture, then extends it with 
-my own experiments:
+The internship followed the "Dive into Deep Learning" (Zhang et al.) 
+curriculum across five architecture families. This repo contains my 
+worked exercise solutions, experiments, and analysis.
 
-- **Linear & Softmax Regression** — from-scratch + concise implementations
-- **LeNet / Convolutional layers** — CNN fundamentals
-- **Batch Normalization** — implementation and effect analysis
-- **GRU** — gating mechanisms, with reset/update gate ablation study
+> Base notebooks are adapted from D2L (Zhang et al., 2023). 
+> My contributions are the exercise solutions, ablation experiments, 
+> and written analysis in each notebook.
 
-## My contributions beyond the base material
-- Zero-initialization symmetry analysis
-- Loss function comparison (MSE vs Huber)
-- Empirical nn.RNN vs nn.GRU comparison
-- Gate ablation experiments on GRU
+## My worked solutions & experiments
+
+**Linear/Softmax Regression**
+- Zero-initialization symmetry problem analysis
+- Numerical stability of softmax (exp overflow) and cross-entropy (log domain)
+- Replaced MSE with Huber loss; gradient access in PyTorch
+
+**Multilayer Perceptrons**
+- Added hidden layers with tanh activation; observed effects
+- Dropout at test time, dropout + weight decay interaction analysis
+
+**Convolutional Neural Networks**
+- Edge detection with custom kernels + Sobel operator
+- Output-shape math for padding/strides; max vs average pooling in LeNet
+- Batch norm: bias removal, per-layer necessity, dropout+BN combination
+
+**Recurrent Neural Networks**
+- Tokenization methods and vocab-size effects
+- Gradient clipping ablation (what happens without it)
+- Empirical runtime/perplexity comparison: RNN vs GRU vs LSTM (hidden dim 256)
